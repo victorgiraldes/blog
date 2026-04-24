@@ -127,6 +127,16 @@ export type Button = {
   link?: Link
 }
 
+export type Subscriber = {
+  _id: string
+  _type: 'subscriber'
+  _createdAt: string
+  _updatedAt: string
+  _rev: string
+  email: string
+  subscribedAt?: string
+}
+
 export type Settings = {
   _id: string
   _type: 'settings'
@@ -500,6 +510,7 @@ export type AllSanitySchemaTypes =
   | BlockContentTextOnly
   | BlockContent
   | Button
+  | Subscriber
   | Settings
   | SanityImageCrop
   | SanityImageHotspot

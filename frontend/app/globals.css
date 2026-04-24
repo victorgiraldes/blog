@@ -23,6 +23,9 @@
 @theme {
   --shadow-layer: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
 
+  --font-family-sans: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-family-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
   --color-framework: #000;
   --color-black: #0b0b0b;
   --color-white: #fff;
@@ -39,7 +42,7 @@
   --color-gray-700: #383d51;
   --color-gray-800: #252837;
   --color-gray-900: #1b1d27;
-  --color-gray-950: #13141b;
+  --color-gray-950: #0d0e12;
 
   --default-transition-duration: 250ms;
 }

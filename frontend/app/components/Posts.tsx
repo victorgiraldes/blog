@@ -15,23 +15,23 @@ const Post = ({post}: {post: AllPostsQueryResult[number]}) => {
     <article
       data-sanity={dataAttr({id: _id, type: 'post', path: 'title'}).toString()}
       key={_id}
-      className="border border-gray-200 rounded-sm p-6 bg-gray-50 flex flex-col justify-between transition-colors hover:bg-white relative"
+      className="group relative border-l-2 border-gray-800 hover:border-yellow-400 bg-gray-900/40 hover:bg-gray-900 transition-all duration-300 pl-6 py-5 pr-6"
     >
-      <Link className="hover:text-brand underline transition-colors" href={`/posts/${slug}`}>
+      <Link className="hover:text-gray-300 transition-colors" href={`/posts/${slug}`}>
         <span className="absolute inset-0 z-10" />
       </Link>
+      <div className="absolute -left-[5px] top-6 w-2 h-2 rounded-full bg-gray-700 group-hover:bg-yellow-400 transition-colors duration-300" />
       <div>
-        <h3 className="text-2xl mb-4">{title}</h3>
-
-        <p className="line-clamp-3 text-sm leading-6 text-gray-600 max-w-[70ch]">{excerpt}</p>
+        <h3 className="text-xl font-semibold mb-3 text-white group-hover:text-yellow-400 transition-colors duration-200">{title}</h3>
+        <p className="line-clamp-2 text-sm leading-6 text-gray-400 max-w-[70ch]">{excerpt}</p>
       </div>
-      <div className="flex items-center justify-between mt-6 pt-4 border-t border-gray-100">
+      <div className="flex items-center justify-between mt-5 pt-4 border-t border-gray-800">
         {author && author.firstName && author.lastName && (
           <div className="flex items-center">
             <Avatar person={author} small={true} />
           </div>
         )}
-        <time className="text-gray-500 text-xs font-mono" dateTime={date}>
+        <time className="text-gray-600 text-xs font-mono ml-auto" dateTime={date}>
           <DateComponent dateString={date} />
         </time>
       </div>
@@ -49,8 +49,8 @@ const Posts = ({
   subHeading?: string
 }) => (
   <div>
-    {heading && <h2 className="text-3xl text-gray-900 sm:text-4xl lg:text-5xl">{heading}</h2>}
-    {subHeading && <p className="mt-2 text-lg leading-8 text-gray-600">{subHeading}</p>}
+    {heading && <h2 className="text-3xl text-white sm:text-4xl lg:text-5xl">{heading}</h2>}
+    {subHeading && <p className="mt-2 text-lg leading-8 text-gray-500">{subHeading}</p>}
     <div className="pt-6 space-y-6">{children}</div>
   </div>
 )
@@ -83,8 +83,7 @@ export const AllPosts = async () => {
 
   return (
     <Posts
-      heading="Recent Posts"
-      subHeading={`${data.length === 1 ? 'This blog post is' : `These ${data.length} blog posts are`} populated from your Sanity Studio.`}
+      heading="Latest Posts"
     >
       {data.map((post: AllPostsQueryResult[number]) => (
         <Post key={post._id} post={post} />
