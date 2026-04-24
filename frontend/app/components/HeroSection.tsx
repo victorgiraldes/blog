@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import {useLanguage} from '@/app/context/LanguageContext'
 import {useRef, useCallback} from 'react'
 
@@ -51,22 +50,6 @@ export default function HeroSection() {
           <p className="text-lg sm:text-xl text-gray-400 font-light max-w-xl leading-relaxed">
             {t.hero.bio}
           </p>
-          <div className="flex gap-6 mt-8">
-            <Link
-              href="/about"
-              className="font-mono text-sm text-gray-400 underline underline-offset-4 hover:text-white transition-colors"
-            >
-              {t.hero.aboutLink}
-            </Link>
-            <Link
-              href="https://github.com/victorgiraldes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-mono text-sm text-gray-400 underline underline-offset-4 hover:text-white transition-colors"
-            >
-              {t.hero.githubLink}
-            </Link>
-          </div>
         </div>
       </div>
     </div>

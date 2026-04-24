@@ -6,8 +6,6 @@ export const translations = {
     hero: {
       role: 'Software Engineer',
       bio: 'Writing about backend engineering, system design, and software architecture. From Ruby & Rails to distributed systems, Kubernetes, and API design.',
-      aboutLink: 'About me →',
-      githubLink: 'GitHub →',
     },
     tags: { title: 'Topics' },
     newsletter: {
