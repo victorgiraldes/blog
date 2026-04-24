@@ -31,8 +31,6 @@ export const translations = {
     hero: {
       role: 'Engenheiro de Software',
       bio: 'Escrevendo sobre engenharia backend, design de sistemas e arquitetura de software. De Ruby & Rails a sistemas distribuídos, Kubernetes e design de APIs.',
-      aboutLink: 'Sobre mim →',
-      githubLink: 'GitHub →',
     },
     tags: { title: 'Tópicos' },
     newsletter: {
